@@ -1,0 +1,27 @@
+{
+  "name": "color-calculus",
+  "version": "0.2.0",
+  "main": "dist/color-calculus.cjs.js",
+  "module": "dist/color-calculus.esm.js",
+  "browser": "dist/color-calculus.umd.js",
+  "types": "dist/color-calculus.d.ts",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "mocha": "^6.0.2",
+    "prettier": "^1.16.4",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-terser": "^4.0.4",
+    "rollup": "^1.0.0"
+  },
+  "scripts": {
+    "build": "node utils/generate_code.js && rollup -c",
+    "dev": "rollup -c -w",
+    "test": "mocha",
+    "pretest": "yarn run build",
+    "prettify": "prettier --write {src,test,utils}/**/*.js"
+  },
+  "files": [
+    "dist"
+  ]
+}
