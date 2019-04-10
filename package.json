@@ -1,6 +1,8 @@
 {
   "name": "color-calculus",
-  "version": "0.2.0",
+  "description": "A zero-dependency library of color conversion functions",
+  "author": "Donghao Ren (https://donghaoren.org/)",
+  "version": "0.2.1",
   "main": "dist/color-calculus.cjs.js",
   "module": "dist/color-calculus.esm.js",
   "browser": "dist/color-calculus.umd.js",
@@ -23,5 +25,10 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/donghaoren/color-calculus"
+  }
 }

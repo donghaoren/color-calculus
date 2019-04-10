@@ -1,6 +1,6 @@
 import { matmul_3x3 } from "./matmul";
 
-export const version = "0.2.0";
+export const version = "0.2.1";
 
 /** Compose a series of color conversion functions. Used in the generated code */
 function compose(functions) {
