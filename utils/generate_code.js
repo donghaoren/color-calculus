@@ -109,6 +109,10 @@ fs.writeFileSync(
   )
 );
 
+if (!fs.existsSync("dist")) {
+  fs.mkdirSync("dist");
+}
+
 fs.writeFileSync(
   "dist/color-calculus.d.ts",
   prettier.format(
