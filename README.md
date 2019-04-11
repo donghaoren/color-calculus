@@ -6,7 +6,7 @@ A zero-dependency library of color conversion functions.
 
 - General Color Spaces
 
-  - `lab` ([CIELAB](https://en.wikipedia.org/wiki/CIELAB_color_space#CIELAB) with D65 Illuminant)
+  - `lab` ([CIELAB](https://en.wikipedia.org/wiki/CIELAB_color_space#CIELAB) with D50 Illuminant)
   - `hcl` (`lab` in polar coordinates)
   - `xyz` ([CIEXYZ](https://en.wikipedia.org/wiki/CIE_1931_color_space))
 
@@ -85,7 +85,7 @@ source_to_destination(x: [number, number, number]): [number, number, number];
 
 - General Color Spaces
 
-  - `lab` (CIELAB with D65 Illuminant)
+  - `lab` (CIELAB with D50 Illuminant)
   - `hcl` (Polar coordinates of `lab`)
   - `xyz` (CIEXYZ)
 
