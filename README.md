@@ -66,6 +66,47 @@ const { xyz_to_lab } = require("color-calculus");
 
 The `color-calculus.umd.min.js` has zero dependency, you can copy the file from the `node_modules` folder to a different location and specify the `src` attribute accordingly.
 
+### High-level API
+
+`color-calculus` provides a high-level API to access its colorspace conversion functions.
+
+#### The `Color` class
+
+```js
+import { color, Color } from "color-calculus";
+
+// Create a Color instance
+var c = color("#1f77b4"); // from HEX string
+var c = color("rgb(31,119,180)"); // from CSS string
+var c = color("cyan"); // from named color
+var c = color(47.4, -8.9, -40.2, "lab"); // from CIELAB values
+var c = color([47.4, -8.9, -40.2], "lab"); // from CIELAB values
+var c = color(15.4, 16.8, 45.6, "xyz"); // from CIEXYZ values
+var c = color([15.4, 16.8, 45.6], "xyz"); // from CIEXYZ values
+
+// Calling the Color constructor has the same effect
+var c = new Color([15.4, 16.8, 45.6], "xyz"); // from CIEXYZ values
+
+c instanceof Color; // true
+
+c.alpha(); // 1
+c.alpha(0.5); // set alpha to 0.5
+
+c.css(); // 'rgba(31,119,180,0.5)'
+c.hex(); // '#1f77b4'
+c.lab(), c.to("lab"); // [ 47.4, -8.9, -40.2 ] (approximately)
+c.hcl(), c.to("hcl"); // [ 47.4, -8.9, -40.2 ] (approximately)
+c.JCh(), c.to("JCh"); // [ 47.4, -8.9, -40.2 ] (approximately)
+c.Jab(), c.to("Jab"); // [ 47.4, -8.9, -40.2 ] (approximately)
+c.xyz(), c.to("xyz"); // [ 47.4, -8.9, -40.2 ] (approximately)
+```
+
+#### The `Scale` class
+
+```js
+import { scale, Scale } from "color-calculus";
+```
+
 ### Conversion Functions
 
 All color conversions are named in the following convention:
@@ -148,10 +189,6 @@ the Jacobian is returned in this format:
   [ dy3/dx1, dy3/dx2, dy3/dx3 ]
 ]
 ```
-
-### High-level API
-
-TODO.
 
 ## Development
 
